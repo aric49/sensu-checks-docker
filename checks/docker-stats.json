@@ -1,0 +1,17 @@
+{
+	"checks": {
+		"docker-stats": {
+			"command": "metrics-docker-stats.rb -H /var/run/docker.sock",
+			"interval": 10,
+			"standalone": true,
+			"application": "Docker Stats",
+			"opsgenie": {
+			    "teams": ["DevOps"],
+			    "tags": ["monitoring: sensu","application: ECS-Docker"],
+				"source": "Docker Stats",
+				"priority": "P1"
+			},
+			"handlers": ["opsgenie"]
+		}
+	}
+}
