@@ -4,7 +4,7 @@ set -ex
 #Entrypoint Script to dynamically get hostname for the check
 function sensu_cleanup {
   echo "Docker Terminated Gracefully Deleteing Client......"
-  curl -X DELETE http://sensu-api.internal.tree.com/clients/checks-dockerd-$HOSTNAME_OVERRIDE
+  curl -X DELETE http://sensu-api.my.fqdn.com/clients/checks-dockerd-$HOSTNAME_OVERRIDE
 }
 
 function sensu_kill {
